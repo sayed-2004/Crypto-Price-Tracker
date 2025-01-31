@@ -9,6 +9,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <CoinContextProvider> 
       <App />
     </CoinContextProvider>
-    
   </React.StrictMode>,
 )
