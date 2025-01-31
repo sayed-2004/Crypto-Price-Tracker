@@ -1,0 +1,33 @@
+/* Smooth Transition */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #323546 !important; /* Dark background */
+    color: white !important;
+}
+
+/* Dark Mode Styles for Text */
+body.dark-theme .navbar-brand,
+body.dark-theme .nav-link {
+    color: white !important; /* Ensure text inside navbar is white */
+}
+
+/* Adjust the Disabled Nav Item Color in Dark Mode */
+body.dark-theme .nav-link.disabled {
+    color: #aaa !important; /* Dimmed color for disabled items */
+}
+
+/* Optional: Change the text color for the dropdown items as well */
+body.dark-theme .dropdown-item {
+    color: white !important;
+}
+

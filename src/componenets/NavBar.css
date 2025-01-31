@@ -1,0 +1,42 @@
+/* Custom button styling for Search, Login, and Sign Up */
+.custom-button {
+    background: rgb(56, 97, 251) !important; 
+    height: 35px; /* Adjust height for buttons */
+    font-size: 0.8rem !important; /* Make text smaller */
+    color: white !important; /* Ensure text color is white */
+    border-color: rgb(56, 97, 251);
+    padding: 5px 10px; /* Adjust padding for better spacing */
+}
+
+/* Make sure the text inside the buttons remains white */
+.custom-button:hover {
+    background: rgb(40, 80, 230) !important; /* Slightly darker blue on hover */
+    color: white !important;
+}
+
+/* Ensure the Search button text is also white */
+.btn-outline-success {
+    color: white !important; /* Change text color to white */
+    border-color: rgb(40, 80, 230) !important; /* Make sure the border remains visible */
+    font-size: 0.8rem !important; /* Make text smaller */
+    padding: 5px 10px; /* Adjust padding for better spacing */
+}
+
+/* Style the search bar */
+.custom-search {
+    width: 220px; /* Slightly decrease width */
+    height: 35px; /* Keep height consistent */
+    background-color: #f0f0f0; /* Light grayish background color */
+    color: #888; /* Text color inside the search bar */
+    font-size: 0.8rem !important; /* Reduce text size */
+    padding: 5px 10px; /* Adjust padding */
+    border: 1px solid #b0b0b0; /* Subtle border */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Change the placeholder text color */
+.custom-search::placeholder {
+    color: #a0a0a0 !important; /* Bright gray color for placeholder text */
+}
+
+
