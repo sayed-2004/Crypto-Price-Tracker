@@ -1,16 +1,20 @@
 import { useEffect, useState, createContext, ReactNode } from "react";
 
+
 interface Currency {
     name: string;
     symbol: string;
 }
 
-interface Coin {
-    id: string;
+export interface Coin {
     name: string;
     symbol: string;
-    current_price: number;
+    market_cap_rank: number;
     image: string;
+    current_price: string;
+    price_change_percentage_24h: number;
+    market_cap: number;
+
 }
 
 interface CoinContextType {
@@ -21,11 +25,16 @@ interface CoinContextType {
 
 export const CoinContext = createContext<CoinContextType | null>(null); // Correctly define the context
 
-const CoinContextProvider = ({ children }: { children: ReactNode }) => {
+interface CoinContextProviderProps {
+    children: ReactNode; // Define children as ReactNode
+}
+
+
+const CoinContextProvider: React.FC<CoinContextProviderProps> = ({ children }) => {
     const [allCoin, setAllCoin] = useState<Coin[]>([]);
     const [currency, setCurrency] = useState<Currency>({
         name: "usd",
-        symbol: "$"
+        symbol: "$",
     });
 
     const fetchAllCoin = async () => {
@@ -37,6 +46,11 @@ const CoinContextProvider = ({ children }: { children: ReactNode }) => {
         fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
             .then(res => res.json())
             .then(res => setAllCoin(res))
+            .catch(err => console.error(err));
+
+        fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=10', options)
+            .then(res => res.json())
+            .then(res => console.log(res))
             .catch(err => console.error(err));
     };
 

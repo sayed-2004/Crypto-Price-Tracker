@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import './NavBar.css' // Import the CSS file
 import { CoinContext } from '../context/CoinContext'; 
+import './Home.css'
 
 function NavBar() {
 
-    const coinContext = useContext(CoinContext);
+    //currency
+    //const {setCurrency} = useContext(CoinContext);
 
-    if (!coinContext) {
-        return null; // Avoid errors if context is not available
-    }
-
-    const { setCurrency } = coinContext;
+    
 
 
     return (
