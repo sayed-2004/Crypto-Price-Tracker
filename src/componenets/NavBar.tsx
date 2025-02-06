@@ -2,13 +2,18 @@ import React, { useContext } from 'react';
 import './NavBar.css' // Import the CSS file
 import { CoinContext } from '../context/CoinContext'; 
 import './Home.css'
+import { useNavigate } from 'react-router-dom';
 
 function NavBar() {
 
     //currency
     //const {setCurrency} = useContext(CoinContext);
 
-    
+    const navigate = useNavigate();
+
+    const handleSignIn = () => {
+        navigate("/login");
+    }
 
 
     return (
@@ -66,7 +71,7 @@ function NavBar() {
                             <button className="btn btn-outline-success custom-btn custom-button" type="submit" >Search</button>
                         </form>
                         <div className="btn-group ms-3" role="group" aria-label="Auth buttons" style={{marginRight: "23px", marginBottom: "2px"}}>
-                            <button type="button" className="btn btn-outline-success custom-btn custom-button">Login</button>
+                            <button type="button" className="btn btn-outline-success custom-btn custom-button" onClick={handleSignIn}>Login</button>
                             <button type="button" className="btn btn-outline-success custom-btn custom-button">Sign Up</button>
                         </div>
                     </div>

@@ -15,6 +15,14 @@ body.dark-theme {
     color: white !important;
 }
 
+body.dark-theme .login-box p{
+    color: black !important;
+}
+
+body.dark-theme .login-box hr{
+    color: #323546;
+}
+
 /* Dark Mode Styles for Text */
 body.dark-theme .navbar-brand,
 body.dark-theme .nav-link {
