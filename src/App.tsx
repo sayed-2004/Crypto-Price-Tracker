@@ -4,7 +4,7 @@ import ThemeToggle from "./componenets/ThemeToggle";
 import { Routes, Route, useLocation} from "react-router-dom";
 import Home from './componenets/Home'
 import Footer from "./componenets/Footer/Footer";
-import LoginSignUp from "./componenets/LoginSignUp/LoginSignUp";
+import Login from "./componenets/LoginSignUp/Login";
 
 function App(){
   
@@ -17,7 +17,7 @@ function App(){
       <ThemeToggle />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path="/login" element={<LoginSignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       {!isLoginPage && <Footer />}
       </div>

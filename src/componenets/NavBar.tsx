@@ -1,20 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './NavBar.css' // Import the CSS file
 import { CoinContext } from '../context/CoinContext'; 
 import './Home.css'
-import { useNavigate } from 'react-router-dom';
+import Login from './LoginSignUp/Login';
 
 function NavBar() {
 
-    //currency
-    //const {setCurrency} = useContext(CoinContext);
-
-    const navigate = useNavigate();
-
-    const handleSignIn = () => {
-        navigate("/login");
-    }
-
+    const [showLogin, setShowLogin] = useState(false);
 
     return (
         <>
@@ -71,7 +63,7 @@ function NavBar() {
                             <button className="btn btn-outline-success custom-btn custom-button" type="submit" >Search</button>
                         </form>
                         <div className="btn-group ms-3" role="group" aria-label="Auth buttons" style={{marginRight: "23px", marginBottom: "2px"}}>
-                            <button type="button" className="btn btn-outline-success custom-btn custom-button" onClick={handleSignIn}>Login</button>
+                            <button type="button" className="btn btn-outline-success custom-btn custom-button" onClick={() => setShowLogin(true)}>Login</button>
                             <button type="button" className="btn btn-outline-success custom-btn custom-button">Sign Up</button>
                         </div>
                     </div>
@@ -79,6 +71,14 @@ function NavBar() {
             </nav>
             {/* Black line under the Navbar */}
             <hr style={{marginTop: "10px" }}/>
+
+            {/* Custom Login Modal */}
+            {showLogin && (
+                <div className="custom-modal">
+                    <span className="close-btn" onClick={() => setShowLogin(false)}>&times;</span>
+                    <Login />
+                </div>
+            )}
         </>
     );
 }
