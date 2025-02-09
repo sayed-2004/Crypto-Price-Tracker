@@ -3,10 +3,12 @@ import './NavBar.css' // Import the CSS file
 import { CoinContext } from '../context/CoinContext'; 
 import './Home.css'
 import Login from './LoginSignUp/Login';
+import Signup from './LoginSignUp/Signup';
 
 function NavBar() {
 
     const [showLogin, setShowLogin] = useState(false);
+    const [showSignup, setShowSignup] = useState(false);
 
     return (
         <>
@@ -64,7 +66,7 @@ function NavBar() {
                         </form>
                         <div className="btn-group ms-3" role="group" aria-label="Auth buttons" style={{marginRight: "23px", marginBottom: "2px"}}>
                             <button type="button" className="btn btn-outline-success custom-btn custom-button" onClick={() => setShowLogin(true)}>Login</button>
-                            <button type="button" className="btn btn-outline-success custom-btn custom-button">Sign Up</button>
+                            <button type="button" className="btn btn-outline-success custom-btn custom-button" onClick={() => setShowSignup(true)}>Sign Up</button>
                         </div>
                     </div>
                 </div>
@@ -77,6 +79,13 @@ function NavBar() {
                 <div className="custom-modal">
                     <span className="close-btn" onClick={() => setShowLogin(false)}>&times;</span>
                     <Login />
+                </div>
+            )}
+
+            {showSignup && (
+                <div className="custom-modal">
+                    <span className="close-btn" onClick={() => setShowSignup(false)}>&times;</span>
+                    <Signup />
                 </div>
             )}
         </>
