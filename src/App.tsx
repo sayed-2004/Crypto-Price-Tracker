@@ -1,10 +1,10 @@
 import NavBar from "./componenets/NavBar";
 import ThemeToggle from "./componenets/ThemeToggle";
-//import Stylee from "./componenets/Stylee";
 import { Routes, Route, useLocation} from "react-router-dom";
 import Home from './componenets/Home'
 import Footer from "./componenets/Footer/Footer";
 import Login from "./componenets/LoginSignUp/Login";
+
 
 function App(){
   
