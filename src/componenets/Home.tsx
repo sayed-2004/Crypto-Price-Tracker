@@ -53,7 +53,7 @@ const Home = () => {
           <p className='last7Days'>Last 7 Days</p>
         </div>
 
-        {displayCoin.slice(0, 20).map((item, index) => (
+        {displayCoin.slice(0, 25).map((item, index) => (
           <div className='tableLayout' key={index}>
             <p>{item.market_cap_rank}</p>
             <div>
